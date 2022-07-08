@@ -1,0 +1,220 @@
+/* /////////////////////////// */
+.link {
+    color: blue;
+    cursor: pointer;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.btn {
+    border: 2px solid blue;
+    color: blue;
+    background: none;
+    border-radius: 2rem;
+    /* border: 2px solid white;
+    color: white; */
+    padding: 7px 20px;
+}
+
+.btn:hover {
+    background-color: blue;
+    transition: all;
+    transition-duration: 800ms;
+    color: white;
+}
+
+.fa-trash-alt {
+    cursor: pointer;
+
+}
+
+.fa-trash-alt:hover {
+    color: red;
+}
+
+.labelbtn {
+    width: 8rem;
+    cursor: pointer;
+    padding: 20px 1rem;
+    border: none;
+    background: white;
+    font-family: inherit;
+    outline: none;
+}
+
+.image {
+
+    /* height: 27rem;
+    margin-top: 6px;
+    width: 98%; */
+    /* background-color: red; */
+}
+
+.fa-window-close {
+    color: white;
+    color: white;
+    font-size: 21px;
+    margin-top: 7px;
+    cursor: pointer;
+}
+
+.fa-window-close-div {
+    justify-content: end;
+    width: 75.7rem;
+
+    display: flex;
+}
+
+.my-container {
+    background-image: url('../plugins/images/view.jpg');
+    z-index: -333;
+    object-fit: fill;
+    /* width: 77rem; */
+    height: 32rem;
+    margin-top: 3rem;
+    overflow-x: scroll;
+}
+
+.view {
+
+    font-size: 4rem;
+    color: white;
+    font-family: monospace;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25rem;
+    width: 51rem;
+
+}
+
+.view-btn{
+    padding: 12px 2rem;
+    border: 1px solid white !important;
+    /* color: black; */
+    color: white;
+    background: none;
+    border-radius: 31px;
+}
+.view-btn:hover{
+   
+    background: black;
+    color: white;
+}
+
+.page {
+    display: flex;
+    /* overflow-x: scroll; */
+    /* width: 22rem; */
+}
+
+.allofcontainer {
+    /* background: black; */
+    width: 78rem;
+    height: 30rem;
+}
+
+.uploadlogo {
+    font-size: 5rem;
+}
+
+.upload-container {
+    text-align: center;
+    padding: 8rem 8rem;
+    border: 2px solid black;
+    margin-left: 2rem;
+}
+
+.upload {
+    padding: 0 26px;
+
+}
+
+.close-container {
+    text-align: end;
+    margin-right: 10px;
+
+}
+
+.model {
+    background: wheat;
+    /* width: 78rem;
+    height: 53rem; */
+}
+
+.progress {
+    width: 25rem;
+}
+
+.all-off {
+    padding: 26px 17px;
+    display: flex;
+    align-items: center;
+}
+
+.info1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pdf-logo {
+    font-size: 4rem;
+}
+
+.info2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all-content {
+    padding-left: 28px;
+}
+
+.notifaction {
+    display: flex;
+    font-size: 20px;
+    color: white;
+}
+
+.messages {
+    display: flex;
+    font-size: 20px;
+    color: white;
+}
+
+.white {
+    color: white;
+
+}
+
+.ml {
+    margin-left: 5px;
+}
+
+.logo-container {
+    justify-content: space-between;
+    display: flex;
+    width: 15rem;
+    border-right: 1px solid white;
+    margin-right: 7px;
+    padding-right: 20px;
+}
+
+@media screen and (max-width: 614px) {
+    .searchbar {
+        display: block !important
+    }
+}
+
+@media screen and (max-width: 494px) {
+    .page {
+        overflow-x: scroll;
+    }
+}

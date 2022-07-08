@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="noindex,nofollow">
+    <title>WorkWithShyam</title>
+
+    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+
+    <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <link href="css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<style>
+    body {
+        background-color: #74EBD5;
+        background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+
+        min-height: 100vh;
+    }
+
+    .btnm {
+        padding: 8px 5rem;
+        border: 2px solid black;
+        display: inline-block;
+        border-radius: 9px;
+    }
+
+    .btnm:active {
+        background-color: #999;
+        color: black;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        width: 5px;
+        background: #f5f5f5;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        width: 1em;
+        background-color: #ddd;
+        outline: 1px solid slategrey;
+        border-radius: 1rem;
+    }
+
+    .text-small {
+        font-size: 0.9rem;
+    }
+
+    .messages-box,
+    .chat-box {
+        height: 510px;
+        overflow-y: scroll;
+    }
+
+    .rounded-lg {
+        border-radius: 0.5rem;
+    }
+
+    input::placeholder {
+        font-size: 0.9rem;
+        color: #999;
+    }
+</style>
+
+<body>
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin6">
+                    <a class="navbar-brand" href="index.html">
+                        <b class="logo-icon">
+                            <img style="height: 4rem;" src="plugins/images/logo.png" alt="homepage" />
+
+
+                        </b>
+                        <span class="logo-text">
+                            <span class="text-dark"><b>Your Logo</b></span>
+                            <!-- <img src="plugins/images/logo-text.png" alt="homepage" /> -->
+                        </span>
+                    </a>
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                        href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav ms-auto d-flex align-items-center">
+                        <div class="logo-container">
+                            <div class="notifaction">
+                                <small class="white ">Notifaction</small>
+                                <i class="fas ml white fa-bell"></i>
+                            </div>
+                            <div class="messages">
+                                <small class="white ">Messages</small>
+                                <i class=" far ml white fa-comments"></i>
+                            </div>
+                        </div>
+                        <li class=" in">
+                            <form role="search" class="app-search d-none d-md-block me-3">
+                                <input type="text" placeholder="Search..." class="form-control mt-0">
+                                <a href="" class="active">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                            </form>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li>
+                            <a class="profile-pic" href="#">
+                                <img src="plugins/images/users/varun.jpg" alt="user-img" width="36"
+                                    class="img-circle"><span class="text-white font-medium">Shyam</span></a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <div style="display: flex; justify-content: center; font-size: large; padding-top: 2rem;">
+                        <b><span>Fullfilment/Complience</span></b>
+                    </div>
+                    <hr>
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html"
+                                aria-expanded="false">
+                                <i class=" fas fa-home" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Home</b></span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="chat.html"
+                                aria-expanded="false">
+                                <i class=" fab fa-rocketchat" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Chat</b></span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Labels.html"
+                                aria-expanded="false">
+                                <i class=" fab fa-font-awesome-flag" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Labels</b></span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="product.html"
+                                aria-expanded="false">
+                                <i class="fab fa-product-hunt" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Products</b></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div style="margin-left: 25px; font-size: large; padding-top: 2rem;">
+                        <b><span>Others</span></b>
+                    </div>
+                    <hr>
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
+                                <i class=" fas fa-heading" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Help & Support</b></span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
+                                aria-expanded="false">
+                                <i class="fas fa-user" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>MY Profile/Setting</b></span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
+                                <i class=" fas fa-bullhorn" aria-hidden="true"></i>
+                                <span class="hide-menu"><b>Log out</b></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">MESSAGES</h4>
+                    </div>
+
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="container-fluid">
+                <div class="container py-5 px-4">
+
+
+                    <div class="row rounded-lg overflow-hidden shadow">
+
+                        <div class="col-5 px-0">
+                            <div class="bg-dark">
+
+                                <div class="bg-gray px-4 py-2 bg-light">
+                                    <p class="h5 mb-0 py-1">Recent</p>
+                                </div>
+
+                                <div class="messages-box">
+                                    <div class="list-group rounded-0">
+                                        <a class="list-group-item list-group-item-action active text-white rounded-0">
+                                            <div class="media"><img
+                                                    src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg"
+                                                    alt="user" width="50" class="rounded-circle">
+                                                <div class="media-body ml-4">
+                                                    <div class="d-flex align-items-center justify-content-between mb-1">
+                                                        <h6 class="mb-0">Jason Doe</h6><small
+                                                            class="small font-weight-bold">25 Dec</small>
+                                                    </div>
+                                                    <p class="font-italic mb-0 text-small">Lorem ipsum dolor sit amet,
+                                                        consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                                        ut labore.</p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#"
+                                            class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                            <div class="media"><img
+                                                    src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg"
+                                                    alt="user" width="50" class="rounded-circle">
+                                                <div class="media-body ml-4">
+                                                    <div class="d-flex align-items-center justify-content-between mb-1">
+                                                        <h6 class="mb-0">Jason Doe</h6><small
+                                                            class="small font-weight-bold">14 Dec</small>
+                                                    </div>
+                                                    <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor
+                                                        sit amet, consectetur. incididunt ut labore.</p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#"
+                                            class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                            <div class="media"><img
+                                                    src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg"
+                                                    alt="user" width="50" class="rounded-circle">
+                                                <div class="media-body ml-4">
+                                                    <div class="d-flex align-items-center justify-content-between mb-1">
+                                                        <h6 class="mb-0">Jason Doe</h6><small
+                                                            class="small font-weight-bold">9 Nov</small>
+                                                    </div>
+                                                    <p class="font-italic text-muted mb-0 text-small">consectetur
+                                                        adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#"
+                                            class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                            <div class="media"><img
+                                                    src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg"
+                                                    alt="user" width="50" class="rounded-circle">
+                                                <div class="media-body ml-4">
+                                                    <div class="d-flex align-items-center justify-content-between mb-1">
+                                                        <h6 class="mb-0">Jason Doe</h6><small
+                                                            class="small font-weight-bold">18 Oct</small>
+                                                    </div>
+                                                    <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor
+                                                        sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                                        incididunt ut labore.</p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#"
+                                            class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                            <div class="media"><img
+                                                    src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg"
+                                                    alt="user" width="50" class="rounded-circle">
+                                                <div class="media-body ml-4">
+                                                    <div class="d-flex align-items-center justify-content-between mb-1">
+                                                        <h6 class="mb-0">Jason Doe</h6><small
+                                                            class="small font-weight-bold">17 Oct</small>
+                                                    </div>
+                                                    <p class="font-italic text-muted mb-0 text-small">consectetur
+                                                        adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#"
+                                            class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                            <div class="media"><img
+                                                    src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg"
+                                                    alt="user" width="50" class="rounded-circle">
+                                                <div class="media-body ml-4">
+                                                    <div class="d-flex align-items-center justify-content-between mb-1">
+                                                        <h6 class="mb-0">Jason Doe</h6><small
+                                                            class="small font-weight-bold">2 Sep</small>
+                                                    </div>
+                                                    <p class="font-italic text-muted mb-0 text-small">Quis nostrud
+                                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                        consequat.</p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#"
+                                            class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                            <div class="media"><img
+                                                    src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg"
+                                                    alt="user" width="50" class="rounded-circle">
+                                                <div class="media-body ml-4">
+                                                    <div class="d-flex align-items-center justify-content-between mb-1">
+                                                        <h6 class="mb-0">Jason Doe</h6><small
+                                                            class="small font-weight-bold">30 Aug</small>
+                                                    </div>
+                                                    <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor
+                                                        sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                                        incididunt ut labore.</p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#"
+                                            class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                                            <div class="media"><img
+                                                    src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg"
+                                                    alt="user" width="50" class="rounded-circle">
+                                                <div class="media-body ml-4">
+                                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                                        <h6 class="mb-0">Jason Doe</h6><small
+                                                            class="small font-weight-bold">21 Aug</small>
+                                                    </div>
+                                                    <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor
+                                                        sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                                        incididunt ut labore.</p>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Chat Box-->
+                        <div class="col-7 px-0">
+                            <div class="px-4 py-5 chat-box bg-white">
+                                <!-- Sender Message-->
+                                <div class="media w-50 mb-3"><img
+                                        src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user"
+                                        width="50" class="rounded-circle">
+                                    <div class="media-body ml-3">
+                                        <div class="bg-light rounded py-2 px-3 mb-2">
+                                            <p class="text-small mb-0 text-muted">Test which is a new approach all
+                                                solutions</p>
+                                        </div>
+                                        <p class="small text-muted">12:00 PM | Aug 13</p>
+                                    </div>
+                                </div>
+
+                                <!-- Reciever Message-->
+                                <div class="media w-50 ml-auto mb-3">
+                                    <div class="media-body">
+                                        <div class="bg-primary rounded py-2 px-3 mb-2">
+                                            <p class="text-small mb-0 text-white">Test which is a new approach to have
+                                                all solutions</p>
+                                        </div>
+                                        <p class="small text-muted">12:00 PM | Aug 13</p>
+                                    </div>
+                                </div>
+
+                                <!-- Sender Message-->
+                                <div class="media w-50 mb-3"><img
+                                        src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user"
+                                        width="50" class="rounded-circle">
+                                    <div class="media-body ml-3">
+                                        <div class="bg-light rounded py-2 px-3 mb-2">
+                                            <p class="text-small mb-0 text-muted">Test, which is a new approach to have
+                                            </p>
+                                        </div>
+                                        <p class="small text-muted">12:00 PM | Aug 13</p>
+                                    </div>
+                                </div>
+
+                                <!-- Reciever Message-->
+                                <div class="media w-50 ml-auto mb-3">
+                                    <div class="media-body">
+                                        <div class="bg-primary rounded py-2 px-3 mb-2">
+                                            <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test
+                                            </p>
+                                        </div>
+                                        <p class="small text-muted">12:00 PM | Aug 13</p>
+                                    </div>
+                                </div>
+
+                                <!-- Sender Message-->
+                                <div class="media w-50 mb-3"><img
+                                        src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user"
+                                        width="50" class="rounded-circle">
+                                    <div class="media-body ml-3">
+                                        <div class="bg-light rounded py-2 px-3 mb-2">
+                                            <p class="text-small mb-0 text-muted">Test, which is a new approach</p>
+                                        </div>
+                                        <p class="small text-muted">12:00 PM | Aug 13</p>
+                                    </div>
+                                </div>
+
+                                <!-- Reciever Message-->
+                                <div class="media w-50 ml-auto mb-3">
+                                    <div class="media-body">
+                                        <div class="bg-primary rounded py-2 px-3 mb-2">
+                                            <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test
+                                            </p>
+                                        </div>
+                                        <p class="small text-muted">12:00 PM | Aug 13</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Typing area -->
+                            <form action="#" class="bg-light">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Type a message" aria-describedby="button-addon2"
+                                        class="form-control rounded-0 border-0 py-4 bg-light">
+                                    <div class="input-group-append">
+                                        <button id="button-addon2" type="submit" class="btn btn-link"> <i
+                                                class="fa fa-paper-plane"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 2rem 3rem;">
+                <button class="btnm">Chat with Graphic Designer</button>
+                <button class="btnm">Chat with admin</button>
+                <button class="btnm">Chat with Customer Service</button>
+            </div>
+            <footer class="footer text-center"> 2021 © All right reserved | <a
+                    >WorkWithShyam.com</a>
+            </footer>
+        </div>
+    </div>
+    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app-style-switcher.js"></script>
+    <script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <!--Wave Effects -->
+    <script src="js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.js"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="plugins/bower_components/chartist/dist/chartist.min.js"></script>
+    <script src="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="js/pages/dashboards/dashboard1.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
